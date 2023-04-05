@@ -53,8 +53,31 @@ namespace RC_C
                                                     pr.baca(conn);
                                                 }
                                                 break;
+                                            case '2':
+                                                {
+                                                    Console.Clear();
+                                                    Console.WriteLine("Input Data Laundry\n");
+                                                    Console.WriteLine("Masukkan nomer antrian :");
+                                                    String NM = Console.ReadLine();
+                                                    Console.WriteLine("Masukkan Nama Pelanggan :");
+                                                    string Nama = Console.ReadLine();
+                                                    Console.WriteLine("Masukkan Alamat Pelanggan :");
+                                                    string Almt = Console.ReadLine();
+                                                    Console.WriteLine("Masukkan berat");
+                                                    string berat = Console.ReadLine();
+                                                    Console.WriteLine("Masukkan No Telepon :");
+                                                    string notlpn = Console.ReadLine();
+                                                    try
+                                                    {
+                                                        pr.insert(NM, Nama, Almt, berat, notlpn, conn);
+                                                    }
+                                                    catch
+                                                    {
+                                                        Console.WriteLine("\nAnda tidak memiliki " + "akses untuk menambah data");
+                                                    }
+                                                }
+                                                break;
 
-                                                
                                         }
 
                                             }
