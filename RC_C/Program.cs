@@ -113,7 +113,7 @@ namespace RC_C
         }
         public void baca(SqlConnection con)
         {
-            SqlCommand cmd = new SqlCommand("Select * From HRD.Mahasiswa", con);
+            SqlCommand cmd = new SqlCommand("Select * From.Karyawan", con);
             SqlDataReader r = cmd.ExecuteReader();
             while (r.Read())
             {
@@ -125,19 +125,19 @@ namespace RC_C
             }
             r.Close();
         }
-        public void insert(string NIM, string NmaMhs, string Almt, string jk, string notlpn, SqlConnection con)
+        public void insert(string NM, string Nama, string Alamat, string berat, string nohp, SqlConnection con)
         {
             string str = "";
-            str = "insert into HRD.MAHASISWA (NIM,NamaMhs,AlamatMhs,Sex,PhoneMhs)"
-                + "values(@nim,@nma,@alamat,@JK,@Phn)";
+            str = "insert into Pelanggan (NM,Nama,Alamat,berat,NoHp)"
+                + "values(@nm,@nama,@alamat,@brt,@Phn)";
             SqlCommand cmd = new SqlCommand(str, con);
             cmd.CommandType = CommandType.Text;
 
-            cmd.Parameters.Add(new SqlParameter("nim", NIM));
-            cmd.Parameters.Add(new SqlParameter("nma", NmaMhs));
-            cmd.Parameters.Add(new SqlParameter("alamat", Almt));
-            cmd.Parameters.Add(new SqlParameter("JK", jk));
-            cmd.Parameters.Add(new SqlParameter("Phn", notlpn));
+            cmd.Parameters.Add(new SqlParameter("nim", NM));
+            cmd.Parameters.Add(new SqlParameter("nma", Nama));
+            cmd.Parameters.Add(new SqlParameter("alamat", Alamat));
+            cmd.Parameters.Add(new SqlParameter("JK", berat));
+            cmd.Parameters.Add(new SqlParameter("Phn", nohp));
             cmd.ExecuteNonQuery();
             Console.WriteLine(("Data Berhasil Ditambahkan"));
         }
