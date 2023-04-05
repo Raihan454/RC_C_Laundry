@@ -77,6 +77,15 @@ namespace RC_C
                                                     }
                                                 }
                                                 break;
+                                            case '3':
+                                                conn.Close();
+                                                return;
+                                            default:
+                                                {
+                                                    Console.Clear();
+                                                    Console.WriteLine("\nInvalid option");
+                                                }
+                                                break;
 
                                         }
 
