@@ -91,12 +91,14 @@ namespace RC_C
                                     catch
                                     {
                                         Console.WriteLine("\nCheck for the value entered.");
-                                    }
-             
-
+                                    }             
                                 }
-
                             }
+                        default:
+                            {
+                                Console.WriteLine("\nInvalid option");
+                            }
+                            break;
 
                     }
                 }
