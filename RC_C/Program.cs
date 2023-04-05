@@ -86,10 +86,19 @@ namespace RC_C
                                                     Console.WriteLine("\nInvalid option");
                                                 }
                                                 break;
-
                                         }
+                                    }
+                                    catch
+                                    {
+                                        Console.Clear();
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.WriteLine("Tidak Dapat Mengakses Database Menggunakan User Tersebut\n");
+                                        Console.ResetColor();
+                                    }
 
-                                            }
+                                }
+
+                            }
                     }
                 }
             }
