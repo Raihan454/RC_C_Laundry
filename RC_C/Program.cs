@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace RC_C
 {
@@ -26,7 +24,16 @@ namespace RC_C
                     char chr = Convert.ToChar(Console.ReadLine());
                     switch (chr)
                     {
-
+                        case 'K':
+                            {
+                                SqlConnection conn = null;
+                                string strKoneksi = "Data source = LAPTOP\\CHENDY; " +
+                                    "initial catalog = {0};" +
+                                    "User ID = {1}; password = {2}";
+                                conn = new SqlConnection(string.Format(strKoneksi, db, user, pass));
+                                conn.Open();
+                                Console.Clear();
+                                while (true)
                     }
                 }
             }
