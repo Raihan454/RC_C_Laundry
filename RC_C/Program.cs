@@ -90,15 +90,14 @@ namespace RC_C
                                     }
                                     catch
                                     {
-                                        Console.Clear();
-                                        Console.ForegroundColor = ConsoleColor.Red;
-                                        Console.WriteLine("Tidak Dapat Mengakses Database Menggunakan User Tersebut\n");
-                                        Console.ResetColor();
+                                        Console.WriteLine("\nCheck for the value entered.");
                                     }
+             
 
                                 }
 
                             }
+
                     }
                 }
             }
