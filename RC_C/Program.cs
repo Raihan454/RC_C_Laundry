@@ -125,5 +125,21 @@ namespace RC_C
             }
             r.Close();
         }
+        public void insert(string NIM, string NmaMhs, string Almt, string jk, string notlpn, SqlConnection con)
+        {
+            string str = "";
+            str = "insert into HRD.MAHASISWA (NIM,NamaMhs,AlamatMhs,Sex,PhoneMhs)"
+                + "values(@nim,@nma,@alamat,@JK,@Phn)";
+            SqlCommand cmd = new SqlCommand(str, con);
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.Add(new SqlParameter("nim", NIM));
+            cmd.Parameters.Add(new SqlParameter("nma", NmaMhs));
+            cmd.Parameters.Add(new SqlParameter("alamat", Almt));
+            cmd.Parameters.Add(new SqlParameter("JK", jk));
+            cmd.Parameters.Add(new SqlParameter("Phn", notlpn));
+            cmd.ExecuteNonQuery();
+            Console.WriteLine(("Data Berhasil Ditambahkan"));
+        }
     }
 }
