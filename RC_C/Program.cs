@@ -102,7 +102,28 @@ namespace RC_C
 
                     }
                 }
+                catch
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Tidak Dapat Mengakses Database Menggunakan User Tersebut\n");
+                    Console.ResetColor();
+                }
             }
+        }
+        public void baca(SqlConnection con)
+        {
+            SqlCommand cmd = new SqlCommand("Select * From HRD.Mahasiswa", con);
+            SqlDataReader r = cmd.ExecuteReader();
+            while (r.Read())
+            {
+                for (int i = 0; i < r.FieldCount; i++)
+                {
+                    Console.WriteLine(r.GetValue(i));
+                }
+                Console.WriteLine();
+            }
+            r.Close();
         }
     }
 }
